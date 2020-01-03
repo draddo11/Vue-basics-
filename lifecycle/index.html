@@ -12,31 +12,30 @@
     <div id ="app">
         
         <div class="">
-            Hello World
+            Counter : {{count}}
         </div>
+        <button class="vue-btn" @click="increment">Increment by {{count}}</button>
     </div>
 
     <script>
     var app = new Vue({
         el: '#app',
         data:{
-            text: ''
+            count : 0 
         }, 
 
         methods: {
-            alertTime(){
-                alert(`The time is ${Date.now().toLocaleString()}`)
-            }
-        },
-        created(){
-            this.alertTime('from created');
+           increment(){
+               this.count++
+           }
         },
 
-        mounted(){
-            this.alertTime();
+        updated(){
+            console.log('this.count', this.count)
+            // helps keep track of state that is updated 
         }
+    })
         
-        })
     
     </script>
     
