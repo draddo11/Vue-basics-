@@ -16,12 +16,14 @@
     <div class = "form">
         <div class="form-group">
             <div class= "form-group">
-                <inpu>
-                    
-                </inpu>
+                <label>Task Title</label>
+                <input type="text" v-model="task.title">
 
             </div>
-
+            <div class="form-group">
+                <label> Task Description</label>
+                <textarea class="form-control" v-model="task.text"></textarea>
+            </div>
         </div>
     </div>
 
@@ -33,7 +35,7 @@
         el: '#app',
         data:{
             title: 'Task Tracker ',
-            note:{
+            task:{
                 title: '',
                 text: ''
             }
