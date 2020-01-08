@@ -13,15 +13,27 @@
     <div id = "app">
        <h1>{{title}}</h1>
     </div>
-    <div class = "form">
-        <div class="col-md-4 mb-3">
-            <div class= "form-group">
+    <div class = "form ">
+        <div class="form group ">
+            <div class= "form-group col-md-4 mb-3">
                 <label>Task Title</label>
                 <input class="form-control" type="text" v-model="task.title">
             </div>
-            <div class="form-group" "col-md-4 mb-3">
+            <div class="form-group col-md-4 mb-3">
                 <label> Task Description</label>
                 <textarea class="form-control" v-model="task.text"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-primary" @click="addNote"> Add Task </button>
+        <div class="col-sm-12">
+            <div class="col-sm-4 note" v-for="note in notes">
+                <div class="card">
+                <div class="card-block">
+                    <h4 class = "card-title"> {{note.title}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{note.date}}}}</h6>
+
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -34,13 +46,29 @@
         el: '#app',
         data:{
             title: 'Task Tracker ',
-            task:{
+            note:{
                 title: '',
                 text: ''
-            }
-        }, 
+            }, 
+            notes:[
+                {
+                    title: 'visited hawaii',
+                    text:'great beaches ',
+                    date: new Date(Date.now()).toLocaleString()
+                } 
+            ], 
        
-        })
+        }, 
+        methods: {
+            addNote(){
+            let{text,title} = this.note;
+            this.notes.push({ 
+                text,
+                title,
+                date:new Date(Date.now()).toLocaleString()}
+                )}
+        }
+    })
     
     </script>
     
