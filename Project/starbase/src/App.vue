@@ -1,32 +1,23 @@
 <template>
     <div id ="app">
-       <h3> {{msg}} </h3>
-      <h6> {{title}}</h6>
-    <button class = "btn btn-primary" @click= "fetchCharacter" >Get Characters</button>
+       <h6> {{title}}</h6>
+    <Character/>
     </div>
 </template>
 <script>
+ import Character from './components/Character'
+
 export default {
     name: 'app',
     data(){
         return {
             title: 'Generate Your team here now ',
             msg:'WELCOME TO THE NEXT '
-        },
-        // randNum(){
-        //     return {
-        //         (Math.random()* 60)
-        //     }
-        // }
-    }, 
-    methods: {
-        fetchCharacter(){
-            fetch(`https://swapi.co/api/people/${}`, {
-                method: `GET`
-            })
-            .then(response => response.json())
-            .then (json => console.log(json))
         }
+    },
+
+  components: {
+    Character
     }
 }
 </script>
