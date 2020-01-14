@@ -12,14 +12,20 @@ export default {
         return {
             title: 'Generate Your team here now ',
             msg:'WELCOME TO THE NEXT '
-        }
+        },
+        // randNum(){
+        //     return {
+        //         (Math.random()* 60)
+        //     }
+        // }
     }, 
     methods: {
         fetchCharacter(){
-            fetch('https://swapi.co/api/people', {
+            fetch(`https://swapi.co/api/people/${}`, {
                 method: `GET`
             })
-            .then(response => console.log(response))
+            .then(response => response.json())
+            .then (json => console.log(json))
         }
     }
 }
