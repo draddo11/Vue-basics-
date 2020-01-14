@@ -7,6 +7,7 @@
 </template>
 <script>
 export default {
+    props:['id'],
     name: 'app',
     data(){
         return {
@@ -14,8 +15,8 @@ export default {
         }
         },
       methods:{
-            fetchCharacter(){
-            fetch(`https://swapi.co/api/people/10`, {
+            fetchCharacter(id){
+            fetch(`https://swapi.co/api/people/${id}`, {
                 method: `GET`
             })
             .then(response => response.json())
@@ -23,7 +24,7 @@ export default {
         }
       },
        created(){
-          this.fetchCharacter()
+          this.fetchCharacter(this.id)
       }   
     }
 

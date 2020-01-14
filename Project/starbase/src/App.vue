@@ -1,7 +1,14 @@
 <template>
     <div id ="app">
        <h6> {{title}}</h6>
-    <Character/>
+       <div class='col-md-12'> 
+    <Character 
+    v-for="(id,index) in initial_ids"
+    :id="id"
+    key= "index"
+    />
+    
+     </div>
     </div>
 </template>
 <script>
@@ -12,7 +19,8 @@ export default {
     data(){
         return {
             title: 'Generate Your team here now ',
-            msg:'WELCOME TO THE NEXT '
+            msg:'WELCOME TO THE NEXT ',
+            initial_ids:[1,13,14]
         }
     },
 
