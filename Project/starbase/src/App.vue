@@ -1,5 +1,6 @@
 <template>
     <div id ="app">
+       <h3>{{msg}}</h3>
        <h6> {{title}}</h6>
        <div class='col-md-12'> 
     <Character 
@@ -19,7 +20,7 @@ export default {
     data(){
         return {
             title: 'Generate Your team here now ',
-            msg:'WELCOME TO THE NEXT ',
+            msg:'WELCOME TO THE GALAXY FAR FAR AWAY   ',
             initial_ids:[1,13,14]
         }
     },
