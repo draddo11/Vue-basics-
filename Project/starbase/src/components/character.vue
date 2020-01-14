@@ -1,5 +1,5 @@
 <template>
-    <div id ="app">
+    <div class ="" @click="switchCharacter">
     
       <h6> {{character}}</h6>
     
@@ -8,7 +8,7 @@
 <script>
 export default {
     props:['id'],
-    name: 'app',
+    
     data(){
         return {
             character: {}
@@ -21,6 +21,10 @@ export default {
             })
             .then(response => response.json())
             .then (json => this.character =json)
+        }, 
+        switchCharacter(){
+            let random_id = Math.floor(Math.random() * 83) + 1
+            this.fetchCharacter(random_id)
         }
       },
        created(){
