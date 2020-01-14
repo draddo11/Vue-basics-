@@ -2,7 +2,7 @@
     <div id ="app">
        <h3> {{msg}} </h3>
       <h6> {{title}}</h6>
-    <button btn btn-primary @click= "fetchCharacter" >Get Characters</button>
+    <button class = "btn btn-primary" @click= "fetchCharacter" >Get Characters</button>
     </div>
 </template>
 <script>
