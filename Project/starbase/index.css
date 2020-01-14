@@ -13,6 +13,6 @@ body {
   
   .character-card {
     border: 2px solid #4FC08D;
-    border-radius: 4px;
+    border-radius: 9px;
     cursor: pointer;
   }

@@ -2,7 +2,7 @@
     <div id ="app">
        <h3>{{msg}}</h3>
        <h6> {{title}}</h6>
-       <div class='col-md-12'> 
+       <div class="col-md-12"> 
     <Character 
     v-for="(id,index) in initial_ids"
     :id="id"
