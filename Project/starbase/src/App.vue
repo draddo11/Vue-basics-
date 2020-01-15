@@ -12,6 +12,7 @@
      </div>
     </div>
 </template>
+
 <script>
  import Character from './components/Character'
 
