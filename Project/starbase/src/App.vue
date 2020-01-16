@@ -14,7 +14,7 @@
 </template>
 
 <script>
- import Character from './components/Character'
+ import Character from './components/Character.vue'
 
 export default {
     name: 'app',
